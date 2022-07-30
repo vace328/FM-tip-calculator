@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Tip calculator app</title>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- ////////////// WEBSITE HEADER ////////////// -->
+  <header class="container header">
+    <h1 class="sr-only">Tip Calculator</h1>
+    <div class="logo-wrapper">
+      <img src="images/logo.svg" alt="Logo image" class="logo">
+    </div>
+  </header>
+  <!-- ////////////// MAIN CONTENT ////////////// -->
+  <main class="container container_content">
+    <!--  SECTION ONE  -->
+    <form action="index.html" name="tipCalculator">
+      <section class="container">
+        <div class="input-group">
+          <label for="bill" class="label">Bill</label>
+          <span class="error" id="error-1"></span>
+          <div class="input-field-wrapper">
+            <img src="images/icon-dollar.svg" alt="Dollar sign icon">
+            <input class="input-text" type="text" id="bill-amount" name="bill" />
+          </div>
+          
+        </div>
+        <div class="input-group">
+          <label for="tip" class="label">Select Tip %</label>
+          <span id="error-custom"></span>
+          <ul class="tip" id="tip">
+            <li>
+              <input type="radio" id="tip-5" name="tipAmount" value="5" />
+              <label for="tip-5" class="label">5%</label>
+            </li>
+            <li>
+              <input type="radio" id="tip-10" name="tipAmount" value="10" />
+              <label for="tip-10" class="label">10%</label>
+            </li>
+            <li>
+              <input type="radio" id="tip-15" name="tipAmount" value="15" />
+              <label for="tip-15" class="label">15%</label>
+            </li>
+            <li>
+              <input type="radio" id="tip-25" name="tipAmount" value="25" />
+              <label for="tip-25" class="label">25%</label>
+            </li>
+            <li>
+              <input type="radio" id="tip-50" name="tipAmount" value="50" />
+              <label for="tip-50" class="label">50%</label>
+            </li>
+            <li>
+              <input type="radio" id="other" name="tipAmount" />
+              <label for="other" class="label">Custom:</label>
+            </li>
+            <li>
+              <input type="text" id="custom-radio" name="numAmount" />
+            </li>
+          </ul>
+        </div>
+        <div class="input-group">
+          <label for="number-of-people">Number of People</label>
+          <span class="error"></span>
+          <input class="input-text" type="number" id="number-of-people" name="number-of-people" />
+        </div>
+      </section>
+      <!--  SECTION TWO  -->
+      <section class="container">
+        <div class="result-container">
+          <div class="label-wrapper">
+            <span class="label">Tip Amount</span>
+            <span class="label-secondary">/ person</span>
+          </div>
+          <div class="result">
+            <img src="images/icon-dollar.svg" alt="Dollar sign icon">
+            <p id="tip-amount">0.00</p>
+          </div>          
+        </div>
+
+        <div class="result-container">
+          <div class="label-wrapper">
+            <span class="label">Total</span>
+            <span class="label-secondary">/ person</span>
+          </div>
+          <div class="result">
+            <img src="images/icon-dollar.svg" alt="Dollar sign icon">
+            <p id="total-amount">0.00</p>
+          </div>
+          
+        </div>
+
+        <button type="reset">Reset</button>
+        <button type="button" id="check">check</button>
+        
+      </section>
+    </form>
+
+  </main>
+
+  <!-- <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </footer> -->
+  <script src="src/js/app1.js"></script>
+</body>
+</html>
