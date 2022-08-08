@@ -1,25 +1,26 @@
-// @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap');
+
 // ----- Font family-----
-$ffamily_primary: 'Open Sans';
-$ffamily_accent: 'Raleway';
+$ffamily_primary: 'Space Mono';
+// $ffamily_accent: 'Raleway';
 
 // ----- Font size-----
-$fsize_primary: 12px;
+$fsize_primary: 16px;
+$fsize_accent: 24px;
 
-// ----- Colors [LIGHT] -----
+// ----- Colors -----
 
-$hover: #6B9BFF;
+// lvl1 to lvl...  - from lightest to darkest
+$accent_prim:  hsl(172, 67%, 45%);
 
-$primary_lvl_1: hsl(238, 22%, 44%);
-$primary_lvl_2: hsl(243, 87%, 12%);
+$neutral_lvl_1: hsl(0, 0%, 100%);
+$neutral_lvl_2: hsl(189, 41%, 97%);
+$neutral_lvl_3: hsl(185, 41%, 84%);
+$neutral_lvl_4: hsl(184, 14%, 56%);
+$neutral_lvl_5: hsl(186, 14%, 43%);
+$neutral_lvl_6: hsl(183, 100%, 15%);
 
 
-$neutral_lvl_1: hsl(240, 75%, 98%);
-$neutral_lvl_1: #F8F8FE;
-$neutral_lvl_2: hsl(0, 0%, 75%);
-
-
-$accent_prim:  hsl(224, 93%, 58%);
-$accent_sec: hsl(170, 45%, 43%);
-
+// $primary_lvl_1: hsl(238, 22%, 44%);
+// $accent_sec: hsl(170, 45%, 43%);
+// $hover: #6B9BFF;
 

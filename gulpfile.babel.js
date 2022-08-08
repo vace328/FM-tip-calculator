@@ -56,6 +56,10 @@ const paths = {
 export const serve = done => {
   server.init({
     // proxy: "http://localhost:8888/"
+    ui: {
+      port: 4001
+    },
+    port: 4000,
     server: {
       baseDir: "./"
   }

@@ -29,7 +29,7 @@
           <span class="error" id="error-1"></span>
           <div class="input-field-wrapper">
             <img src="images/icon-dollar.svg" alt="Dollar sign icon">
-            <input class="input-text" type="text" id="bill-amount" name="bill" />
+            <input class="input-text" type="text" id="bill-amount" name="bill" placeholder="142.56"/>
           </div>
           
         </div>
@@ -57,13 +57,13 @@
               <input type="radio" id="tip-50" name="tipAmount" value="50" />
               <label for="tip-50" class="label">50%</label>
             </li>
-            <li>
-              <input type="radio" id="other" name="tipAmount" />
-              <label for="other" class="label">Custom:</label>
+            <li class="test">
+              <input type="radio" id="tip-other" name="tipAmount" />
+              <!-- <label for="other" class="label">Custom:</label> -->
             </li>
             <li>
-              <input type="text" id="custom-radio" name="numAmount" />
-            </li>
+              <input type="text" id="custom-radio" name="customTipAmount" placeholder="Custom" />
+          </li>
           </ul>
         </div>
         <div class="input-group">

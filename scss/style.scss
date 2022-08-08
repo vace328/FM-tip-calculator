@@ -1,4 +1,4 @@
-// @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway:wght@400;700&family=Manrope:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
 
 /*----------  base
 ------------------------------------------------------------------------------*/
@@ -26,7 +26,7 @@
 /*----------  layout
 ------------------------------------------------------------------------------*/
 // @import "layout/forms";
-// @import "layout/header"; 
+@import "layout/header"; 
 // @import "layout/footer";    
 // @import "layout/sidebar";  
 // @import "layout/grid";  
@@ -55,4 +55,104 @@
     overflow: hidden;
     clip: rect(0,0,0,0,0);
     border: 0;
+}
+
+body {
+    background-color: $neutral_lvl_3;
+}
+
+
+form {
+    background-color: $neutral_lvl_1;
+    border-radius: 12px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px; 
+    // border: 1px solid red;   
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+}
+.input-group {
+    margin-bottom: 32px;
+}
+.input-group > label {
+   color: $neutral_lvl_5;
+   font-weight: 700;
+   display: block; 
+   margin-bottom: 10px;
+}
+.input-group:first-of-type {
+    padding: 5px 0;
+}
+
+input:not(#custom-radio) {
+    width: 100%;
+    padding: 5px 18px 5px 18px;
+    border: unset;
+    // background-color: $neutral_lvl_2;
+//    border: 1px solid pink;
+    text-align: right;
+    color: $neutral_lvl_6;
+    border-radius: 5px;
+    &:focus-visible {
+        outline: unset;
+    }
+}
+.input-field-wrapper {
+    position: relative;
+    img {
+        position: absolute;
+        top: 15px;
+        left: 18px;
+    }
+}
+
+.tip {
+    list-style-type:none;
+     margin:20px 0 0 0;
+     padding:0;
+}
+.tip li {
+    float: left;
+    margin:0 8px 0 0;
+    width:147px;
+//    width:100%;
+   height:40px;
+   position:relative;
+}
+.tip label, .tip input {
+    display:block;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+}
+.tip input[type="radio"] {
+    opacity:0.011;
+    z-index:100;
+}
+
+// .tip input[type="radio"] + label {
+//     background:green;
+// }
+
+.tip input[type="radio"]:checked + label {
+    background:yellow;
+}
+
+.tip label {
+     padding:5px;
+     border:1px solid #CCC; 
+     cursor:pointer;
+    z-index:90;
+}
+
+.tip label:hover {
+     background:#DDD;
+}
+
+
+.test {
+    display: none;
 }
