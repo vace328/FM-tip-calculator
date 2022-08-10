@@ -8,8 +8,8 @@ let tipBtns = document.tipCalculator.tipAmount;
 
 let billAmountField = document.getElementById("bill-amount");
 let numOfPeopleField = document.getElementById("number-of-people");
-let tipPerPerson = document.getElementById("tip-amount");
-let totalPerPerson = document.getElementById("total-amount");
+let tipPerPersonField = document.getElementById("tip-amount");
+let totalPerPersonField = document.getElementById("total-amount");
 
 let customRadio = document.getElementById("custom-radio");
 let customRadioErrorContainer = document.getElementById("error-custom");
@@ -55,10 +55,13 @@ function validateFormField(field, error) {
     error.textContent = `Can't be 0`;
     //   changeErrorMsg(error[serial], "error-on", `Can't be 0`);
     //   field.classList.add("error-field");
+	return false;
   } else if (!onlyDigits(field.value)) {
     error.textContent = "Has to be a number";
+	return false;
   } else {
     error.textContent = "";
+	return true;
   }
 }
 function validateCustomRadioField(field, error) {
@@ -106,6 +109,7 @@ function calculateTotalPerPerson(totalBill, numberOfPeople, tipPercent) {
 btn.addEventListener("click", (i) => {
   let bill = billAmountField.value;
   let people = numOfPeopleField.value;
+  
   // let bill = stringToNumber(billAmountField.value);
   // let people = stringToNumber(numOfPeopleField.value);
 
@@ -119,12 +123,9 @@ btn.addEventListener("click", (i) => {
     tipBtns[5].setAttribute("value", customRadio.value);
     tipBtns[5].checked = true;
   }
-  calculateTotalPerPerson(bill, people, tipAmountSelected);
- 
-  console.log(calculateTotalPerPerson(bill, people,tipAmountSelected));
-  // display tip per person
-  let tpp = calculateTipPerPerson(bill, tipAmountSelected, people);
-  console.log(tpp);
+  
+  totalPerPersonField.textContent = calculateTotalPerPerson(bill, people, tipAmountSelected);
+  tipPerPersonField.textContent = calculateTipPerPerson(bill, tipAmountSelected, people);
 });
 
 // Get radio value
@@ -141,16 +142,19 @@ for (let i = 0; i < tipBtns.length; i++) {
       // tipBtns[i].removeAttribute("checked");
       customRadio.value = null;
       customRadio.setAttribute("placeholder", "Custom");
+      customRadio.style.border = "unset";
     }
    	console.log(tipAmountSelected);
   });
 }
 
+// customRadio.style.border = "unset";
 customRadio.addEventListener("input", function (evt) {
   if (validateCustomRadioField(customRadio, customRadioErrorContainer)) {    
     document.getElementById("tip-other").value = customRadio.value;
     document.getElementById("tip-other").checked = true;
     tipAmountSelected = customRadio.value;
+	this.style.borderColor = "hsl(172, 67%, 45%)";
     // console.log(tipAmountSelected);
-  }
+  } 
 });

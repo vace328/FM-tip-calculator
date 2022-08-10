@@ -64,22 +64,31 @@ body {
 
 form {
     background-color: $neutral_lvl_1;
+    background-color: yellow;
     border-radius: 12px;
     border-bottom-right-radius: 0px;
     border-bottom-left-radius: 0px; 
     // border: 1px solid red;   
-    padding: 32px 24px;
+    padding: 32px 16px;
     display: flex;
     flex-direction: column;
 }
+
+.container-1 {
+    padding-left: 8px;
+    padding-right: 8px;
+} 
 .input-group {
-    margin-bottom: 32px;
+    margin-bottom: 30px;
+    &:nth-of-type(2) {
+        margin-bottom: 21px; 
+    }
 }
 .input-group > label {
    color: $neutral_lvl_5;
    font-weight: 700;
    display: block; 
-   margin-bottom: 10px;
+   margin-bottom: 8px;
 }
 .input-group:first-of-type {
     padding: 5px 0;
@@ -87,17 +96,25 @@ form {
 
 input:not(#custom-radio) {
     width: 100%;
-    padding: 5px 18px 5px 18px;
+    padding: 5px 16px 5px 16px;
     border: unset;
-    // background-color: $neutral_lvl_2;
-//    border: 1px solid pink;
+    background-color: $neutral_lvl_2;
+    border: 2px solid $neutral_lvl_2;
     text-align: right;
     color: $neutral_lvl_6;
     border-radius: 5px;
     &:focus-visible {
         outline: unset;
     }
+    &:focus {
+        outline: unset;
+        border: 2px solid $accent_prim;
+    }
+    &:hover {        
+        border: 2px solid $accent_prim;
+    }
 }
+
 .input-field-wrapper {
     position: relative;
     img {
@@ -108,51 +125,114 @@ input:not(#custom-radio) {
 }
 
 .tip {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
     list-style-type:none;
-     margin:20px 0 0 0;
-     padding:0;
+    margin: 20px 0 0 0;
+    padding: 0;
 }
 .tip li {
-    float: left;
-    margin:0 8px 0 0;
-    width:147px;
-//    width:100%;
-   height:40px;
-   position:relative;
+    margin: 0 0 16px 0;
+    width: 147px;
+    height: 48px;
+    position: relative;
+    // background:$neutral_lvl_6;
+    border-radius: 5px;
 }
 .tip label, .tip input {
-    display:block;
     position:absolute;
+    display: block;
     top:0;
     left:0;
     right:0;
-    bottom:0;
+    bottom:0;    
 }
+
 .tip input[type="radio"] {
     opacity:0.011;
     z-index:100;
 }
 
-// .tip input[type="radio"] + label {
-//     background:green;
-// }
+.tip input[type="radio"] + label {
+    background:$neutral_lvl_6;
+}
 
 .tip input[type="radio"]:checked + label {
-    background:yellow;
+    // background:yellow;
+    background: $accent_prim;
 }
+
 
 .tip label {
-     padding:5px;
-     border:1px solid #CCC; 
-     cursor:pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:5px;
+    color: $neutral_lvl_1;
+    border-radius: 5px;
+    // border:1px solid red; 
+    cursor:pointer;
     z-index:90;
+    font-size: 24px;
 }
 
-.tip label:hover {
-     background:#DDD;
-}
+// .tip label:hover {
+//      background:#DDD;
+// }
 
 
 .test {
     display: none;
+}
+
+#custom-radio {
+    border: 2px solid $neutral_lvl_2;
+    border-radius: 5px;
+    color: $neutral_lvl_6;
+    text-align: right;
+    padding-right: 14px;
+    background-color: $neutral_lvl_2;    
+
+    &:focus {
+        outline: unset;
+        border: 2px solid $accent_prim;
+        color: $neutral_lvl_6;
+    }
+    &:hover {        
+        border: 2px solid $accent_prim;
+    }
+}
+
+.container-2 {
+    background-color: $neutral_lvl_6;
+    border-radius: 16px;
+    padding: 24px;
+    padding-top: 44px;
+    .result-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 24px;
+    }
+    .label {
+        display: block;
+        margin-bottom: 8px;
+        color: $neutral_lvl_1;
+    }
+    .label-secondary {
+        font-size: 14px;
+        letter-spacing: -0.04em;
+    }
+    .result {
+        display: flex;
+        p {
+            font-size: 32px; 
+            color: $accent_prim;
+        }
+    }
+    // .dollar-icon {
+    //     font-size: 32px;
+    // }
 }
