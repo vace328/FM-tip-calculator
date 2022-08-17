@@ -1,6 +1,6 @@
 // Get the elements
 
-let btn = document.getElementById("check");
+// let btn = document.getElementById("check");
 
 let errorContainers = document.getElementsByClassName("error");
 let allInputFields = document.getElementsByClassName("input-text");
@@ -51,9 +51,10 @@ function calculateTotalPerPerson(totalBill, numberOfPeople, tipPercent) {
   totalBill = stringToNumber(totalBill);
   tipPercent = stringToNumber(tipPercent);
   numberOfPeople = stringToNumber(numberOfPeople);
+ 
   let tipPerPerson = calculateTipPerPerson(totalBill, tipPercent, numberOfPeople);
   let totalPP =
-    ((totalBill / numberOfPeople) + tipPerPerson);
+  ((totalBill / numberOfPeople) + tipPerPerson);
   return totalPP;
 }
 // function changeErrorMsg(element, className, errorText) {
@@ -130,6 +131,8 @@ function VCRF(status, field, error) {
   }
 }
 
+
+
 // On keyup, wait for the user to stop typing before validating form fields
 function delay(callback, ms) {
   var timer = 0;
@@ -165,8 +168,8 @@ for (let i = 0; i < tipBtns.length; i++) {
       tipPerPersonField.textContent = "0.00";
     } else {
       
-      totalPerPersonField.textContent = calculateTotalPerPerson(bill, people, tipAmountSelected);
-      tipPerPersonField.textContent = calculateTipPerPerson(bill, tipAmountSelected, people);
+      totalPerPersonField.textContent = parseFloat(calculateTotalPerPerson(bill, people, tipAmountSelected)).toFixed(2);
+      tipPerPersonField.textContent = parseFloat(calculateTipPerPerson(bill, tipAmountSelected, people)).toFixed(2);
     }  
   });
 }
@@ -187,8 +190,11 @@ customRadio.addEventListener("input", function (evt) {
     tipPerPersonField.textContent = "0.00";
   } else {
     
-    totalPerPersonField.textContent = calculateTotalPerPerson(bill, people, tipAmountSelected);
-    tipPerPersonField.textContent = calculateTipPerPerson(bill, tipAmountSelected, people);
+    // totalPerPersonField.textContent = calculateTotalPerPerson(bill, people, tipAmountSelected);
+    // tipPerPersonField.textContent = calculateTipPerPerson(bill, tipAmountSelected, people);
+
+    totalPerPersonField.textContent = parseFloat(calculateTotalPerPerson(bill, people, tipAmountSelected)).toFixed(2);
+      tipPerPersonField.textContent = parseFloat(calculateTipPerPerson(bill, tipAmountSelected, people)).toFixed(2);
   }  
 });
 
@@ -210,10 +216,15 @@ for (let i = 0; i < allInputFields.length; i++) {
       tipPerPersonField.textContent = "0";
     } else {
       textFieldsValidated = true;
-      totalPerPersonField.textContent = calculateTotalPerPerson(bill, people, tipAmountSelected);
-      tipPerPersonField.textContent = calculateTipPerPerson(bill, tipAmountSelected, people);
+      // totalPerPersonField.textContent = calculateTotalPerPerson(bill, people, tipAmountSelected);
+      // tipPerPersonField.textContent = calculateTipPerPerson(bill, tipAmountSelected, people);
+
+      totalPerPersonField.textContent = parseFloat(calculateTotalPerPerson(bill, people, tipAmountSelected)).toFixed(2);
+      tipPerPersonField.textContent = parseFloat(calculateTipPerPerson(bill, tipAmountSelected, people)).toFixed(2);
     }  
   }, 500);  
 }
 
+
+// on reset, clear results box
 // VCRF(tipIsSelected, customRadio, customRadioErrorContainer);
