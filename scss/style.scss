@@ -9,7 +9,6 @@
 
 /*----------  helpers
 ------------------------------------------------------------------------------*/
-// @import "helpers/mixins";   
 // @import "helpers/functions"; 
 
 /*----------  components
@@ -17,29 +16,16 @@
 // @import "components/cover";
 // @import "components/icons";
 // @import "components/buttons";
-// @import "components/carousel";
-// @import "components/dropdown";
-// @import "components/navigation";
-/*----------  libs
-------------------------------------------------------------------------------*/
+
 
 /*----------  layout
 ------------------------------------------------------------------------------*/
 // @import "layout/forms";
 @import "layout/header"; 
 // @import "layout/footer";    
-// @import "layout/sidebar";  
-// @import "layout/grid";  
+
   
 
-/*----------  pages
-------------------------------------------------------------------------------*/
-
-/*----------  themes
-------------------------------------------------------------------------------*/
-
-/*----------  vendors
-------------------------------------------------------------------------------*/ 
 
  
 * {
@@ -76,7 +62,7 @@ form {
 
 .container-1 {
     padding-left: 8px;
-    padding-right: 8px;
+    padding-right: 8px;   
 } 
 .input-group {
     margin-bottom: 30px;
@@ -90,6 +76,7 @@ form {
    display: block; 
    margin-bottom: 8px;
 }
+
 .input-group:first-of-type {
     padding: 5px 0;
 }
@@ -97,7 +84,6 @@ form {
 input:not(#custom-radio) {
     width: 100%;
     padding: 5px 16px 5px 16px;
-    border: unset;
     background-color: $neutral_lvl_2;
     border: 2px solid $neutral_lvl_2;
     text-align: right;
@@ -112,6 +98,14 @@ input:not(#custom-radio) {
     }
     &:hover {        
         border: 2px solid $accent_prim;
+        cursor: pointer;
+    }
+}
+
+input.has-error:not(#custom-radio) {
+    border: 2px solid red;
+    &:focus {
+        border: 2px solid red;
     }
 }
 
@@ -159,7 +153,8 @@ input:not(#custom-radio) {
     background:$neutral_lvl_6;
 }
 
-.tip input[type="radio"]:checked + label {
+.tip input[type="radio"]:checked + label,
+.tip input[type="radio"]:hover + label {
     // background:yellow;
     background: $accent_prim;
 }
@@ -183,11 +178,17 @@ input:not(#custom-radio) {
 // }
 
 
+
+
 .test {
     display: none;
 }
+input.custom-radio:-webkit-autofill, 
+input.custom-radio:-webkit-autofill:focus {
+    -webkit-text-fill-color: $neutral_lvl_6 !important;
+  }
 
-#custom-radio {
+.custom-radio {
     border: 2px solid $neutral_lvl_2;
     border-radius: 5px;
     color: $neutral_lvl_6;
@@ -202,7 +203,17 @@ input:not(#custom-radio) {
     }
     &:hover {        
         border: 2px solid $accent_prim;
+        cursor: pointer;
     }
+}
+
+.custom-radio-accent, .custom-radio-accent:focus {
+    border: 2px solid $accent_prim;
+    color: $neutral_lvl_6;
+}
+
+.custom-radio-has-error, .custom-radio-has-error:focus {
+    border: 2px solid red;
 }
 
 .container-2 {
@@ -249,6 +260,20 @@ button {
     border: none;
     border-radius: 5px;
     margin: 0 auto;
+}
+
+.container-1 .input-group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.input-field-wrapper {
+    width: 100%;
+}
+
+.error, .error-custom {
+    color:red;
 }
 
 @media screen and (min-width: 376px) {

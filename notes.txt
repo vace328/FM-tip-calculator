@@ -1,0 +1,15 @@
+validate text input field
+    is a number/only digits
+    CAN'T be 0
+    not empty
+    no white spaces
+record input value after validation
+on change, record selected radio value
+    if custom option is selected
+        validate custom radio input
+        is a number/only digits
+        no white spaces
+        CAN be 0
+function that calculates tip per person (take into account custom option 0)
+function that calculates total per person
+if all fields are correctly filled out, calculate tip per person and total per person, otherwise values are 0

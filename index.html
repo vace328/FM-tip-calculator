@@ -29,13 +29,13 @@
           <span class="error" id="error-1"></span>
           <div class="input-field-wrapper">
             <img src="images/icon-dollar.svg" alt="Dollar sign icon">
-            <input class="input-text" type="text" id="bill-amount" name="bill" placeholder="142.55"/>
+            <input class="input-text" type="text" id="bill-amount" name="bill" placeholder="0"/>
           </div>
           
         </div>
         <div class="input-group">
           <label for="tip" class="label">Select Tip %</label>
-          <span id="error-custom"></span>
+          <span class="error-custom" id="error-custom"></span>
           <ul class="tip" id="tip">
             <li>
               <input type="radio" id="tip-5" name="tipAmount" value="5" />
@@ -62,7 +62,7 @@
               <!-- <label for="other" class="label">Custom:</label> -->
             </li>
             <li>
-              <input type="text" id="custom-radio" name="customTipAmount" placeholder="Custom" />
+              <input type="text" id="custom-radio" class="custom-radio" name="customTipAmount" placeholder="Custom" />
           </li>
           </ul>
         </div>
@@ -85,7 +85,7 @@
           <div class="result">
             <!-- <img src="images/icon-dollar.svg" alt="Dollar sign icon"> -->
             <p class="dollar-icon">$</p>
-            <p id="tip-amount">4.27</p>
+            <p id="tip-amount">0.00</p>
           </div>          
         </div>
 
@@ -102,17 +102,13 @@
         </div>
 
         <button type="reset">Reset</button>
-        <!-- <button type="button" id="check">check</button> -->
+        <button type="button" id="check">check</button>
         
       </section>
     </form>
 
   </main>
 
-  <!-- <footer class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="#">Your Name Here</a>.
-  </footer> -->
   <script src="src/js/app1.js"></script>
 </body>
 </html>
