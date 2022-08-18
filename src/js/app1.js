@@ -127,6 +127,7 @@ function displayResults(textFieldStatus, radioFieldStatus, bill, tip, people) {
   }  
 }
 
+
 // On keyup, wait for the user to stop typing before validating form fields
 function delay(callback, ms) {
   var timer = 0;
@@ -147,7 +148,7 @@ for (let i = 0; i < tipBtns.length; i++) {
       tipAmountSelected = this.value;
       tipIsSelected = true;
       validateTipOptions(tipIsSelected, customRadioErrorContainer);     
-      
+      resetBtn.classList.add("reset-active");
     }
     if (tipBtns[i].id !== "tip-other") {
       customRadio.value = null;
@@ -169,15 +170,17 @@ customRadio.addEventListener("input", function (evt) {
     tipAmountSelected = customRadio.value;
     tipIsSelected = true;  
     customRadio.classList.add("custom-radio-accent");
+
   }
   displayResults(textFieldsValidated, tipIsSelected, bill, tipAmountSelected, people);
+  resetBtn.classList.add("reset-active");
 });
 
 for (let i = 0; i < allInputFields.length; i++) {
   allInputFields[i].onkeyup = delay( (e) => {  
     bill = billAmountField.value;
     people = numOfPeopleField.value; 
-    
+    resetBtn.classList.add("reset-active");
     // validateFormField(allInputFields[i], errorContainers[i]);
     if (customRadio.value.length > 0) {
       tipBtns[5].setAttribute("value", customRadio.value);

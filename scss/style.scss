@@ -239,10 +239,14 @@ button {
     font-weight: 700;
     padding-top: 8px;
     color: $neutral_lvl_6;
-    background-color: $accent_prim;
+    // background-color: $accent_prim;
+    background-color: #0D686D;
     border: none;
     border-radius: 5px;
     margin: 0 auto;
+}
+button.reset-active {
+    background-color: $accent_prim;
 }
 
 .container-1 .input-group {
