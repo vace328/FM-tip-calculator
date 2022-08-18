@@ -29,7 +29,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Github Repo](https://github.com/vace328/FM-tip-calculator)
-- Live Site URL: [Demo](https://vace328.github.io/FM-tip-calculator/)
+- Live Site URL: 
 
 ## My process
 
