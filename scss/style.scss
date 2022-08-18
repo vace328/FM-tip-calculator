@@ -176,7 +176,9 @@ input.custom-radio:-webkit-autofill:focus {
     color: $neutral_lvl_6;
     text-align: right;
     padding-right: 14px;
-    background-color: $neutral_lvl_2;    
+    background-color: $neutral_lvl_2;   
+    width: 147px; 
+    height: 48px;
 
     &:focus {
         outline: unset;
@@ -273,6 +275,10 @@ button.reset-active {
     }
 }
 @media screen and (min-width: 800px) {
+    .custom-radio {
+        width: 117px; 
+        height: 48px;
+    }
     form {
         padding: 32px;
         border-radius: 22px;
