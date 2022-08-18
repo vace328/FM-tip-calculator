@@ -4,25 +4,17 @@
 ------------------------------------------------------------------------------*/
 @import "base/reset";
 @import "base/variables";
-// @import "base/colors";
-@import "base/typography"; 
-
-/*----------  helpers
-------------------------------------------------------------------------------*/
-// @import "helpers/functions"; 
+@import "base/typography";  
 
 /*----------  components
 ------------------------------------------------------------------------------*/
-// @import "components/cover";
-// @import "components/icons";
 // @import "components/buttons";
 
 
 /*----------  layout
 ------------------------------------------------------------------------------*/
 // @import "layout/forms";
-@import "layout/header"; 
-// @import "layout/footer";    
+@import "layout/header";
 
   
 
@@ -43,6 +35,10 @@
     border: 0;
 }
 
+.hide {
+    display: none;
+}
+
 body {
     background-color: $neutral_lvl_3;
 }
@@ -50,12 +46,10 @@ body {
 
 form {
     background-color: $neutral_lvl_1;
-    // background-color: yellow;
-    border-radius: 12px;
+    border-radius: 22px;
     border-bottom-right-radius: 0px;
     border-bottom-left-radius: 0px; 
-    // border: 1px solid red;   
-    padding: 32px 16px;
+    padding: 32px 24px;
     display: flex;
     flex-direction: column;
 }
@@ -103,9 +97,9 @@ input:not(#custom-radio) {
 }
 
 input.has-error:not(#custom-radio) {
-    border: 2px solid red;
+    border: 2px solid $error;
     &:focus {
-        border: 2px solid red;
+        border: 2px solid $error;
     }
 }
 
@@ -124,7 +118,7 @@ input.has-error:not(#custom-radio) {
     align-items: center;
     flex-wrap: wrap;
     list-style-type:none;
-    margin: 20px 0 0 0;
+    margin: 12px 0 0 0;
     padding: 0;
 }
 .tip li {
@@ -155,10 +149,8 @@ input.has-error:not(#custom-radio) {
 
 .tip input[type="radio"]:checked + label,
 .tip input[type="radio"]:hover + label {
-    // background:yellow;
     background: $accent_prim;
 }
-
 
 .tip label {
     display: flex;
@@ -167,22 +159,12 @@ input.has-error:not(#custom-radio) {
     padding:5px;
     color: $neutral_lvl_1;
     border-radius: 5px;
-    // border:1px solid red; 
     cursor:pointer;
     z-index:90;
     font-size: 24px;
 }
 
-// .tip label:hover {
-//      background:#DDD;
-// }
 
-
-
-
-.test {
-    display: none;
-}
 input.custom-radio:-webkit-autofill, 
 input.custom-radio:-webkit-autofill:focus {
     -webkit-text-fill-color: $neutral_lvl_6 !important;
@@ -213,7 +195,7 @@ input.custom-radio:-webkit-autofill:focus {
 }
 
 .custom-radio-has-error, .custom-radio-has-error:focus {
-    border: 2px solid red;
+    border: 2px solid $error;
 }
 
 .container-2 {
@@ -237,6 +219,7 @@ input.custom-radio:-webkit-autofill:focus {
     .label-secondary {
         font-size: 14px;
         letter-spacing: -0.04em;
+        color: $neutral_lvl_5;
     }
     .result {
         display: flex;
@@ -273,7 +256,7 @@ button {
 }
 
 .error, .error-custom {
-    color:red;
+    color: $error;
 }
 
 @media screen and (min-width: 376px) {
@@ -287,8 +270,6 @@ button {
 }
 @media screen and (min-width: 800px) {
     form {
-        // border-bottom-right-radius: 0px;
-        // border-bottom-left-radius: 0px; 
         padding: 32px;
         border-radius: 22px;
         flex-direction: row;
@@ -340,8 +321,7 @@ button {
         &:nth-of-type(3) {
             margin-bottom: 2px; 
         }
-    }
-    
+    }    
     button {
         margin-top: auto;
         height: 46px;

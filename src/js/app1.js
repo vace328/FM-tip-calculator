@@ -59,12 +59,9 @@ function calculateTotalPerPerson(totalBill, numberOfPeople, tipPercent) {
 }
 
 function validateFormField(field, error) {
-  // let fieldType = field.getAttribute("type");
-
   if (!notEmpty(field.value) || field.value == 0) {
     error.textContent = `Can't be 0`;
-    //   changeErrorMsg(error[serial], "error-on", `Can't be 0`);
-    field.classList.add("has-error");
+   field.classList.add("has-error");
 	return false;
   } else if (!onlyDigits(field.value)) {
     error.textContent = "Has to be a number";
@@ -110,7 +107,6 @@ function VCRF(status, field, error) {
     error.textContent = "Has to be a number";
     field.classList.add("custom-radio-has-error");   
   } else {
-    // error.textContent = "All coool";
     error.textContent = "";
     field.classList.remove("custom-radio-has-error");
   } 
@@ -177,7 +173,6 @@ customRadio.addEventListener("input", function (evt) {
   displayResults(textFieldsValidated, tipIsSelected, bill, tipAmountSelected, people);
 });
 
-
 for (let i = 0; i < allInputFields.length; i++) {
   allInputFields[i].onkeyup = delay( (e) => {  
     bill = billAmountField.value;
@@ -191,8 +186,8 @@ for (let i = 0; i < allInputFields.length; i++) {
   
     if (!validateFormField(allInputFields[i], errorContainers[i]) || bill == 0 || people == 0 || bill == "undefined" || people == "undefined" || tipIsSelected == false) {
       textFieldsValidated = false;
-      totalPerPersonField.textContent = "0";
-      tipPerPersonField.textContent = "0";
+      totalPerPersonField.textContent = "0.00";
+      tipPerPersonField.textContent = "0.00";
     } else {
       textFieldsValidated = true;      
 
@@ -206,9 +201,6 @@ resetBtn.addEventListener("click", function (e) {
   tipPerPersonField.textContent = "0.00";
   totalPerPersonField.textContent = "0.00";
 });
-
-// VCRF(tipIsSelected, customRadio, customRadioErrorContainer);
-
 
 
 
